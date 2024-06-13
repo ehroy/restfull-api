@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('amount');
-            $table->integer('product_id');
-            $table->enum('type',['in','out']);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('invoice')->unique();
+            $table->integer('total');
+            $table->enum('type',['tranfers','qris']);
+            $table->enum('status',['succes','processing','failed']);
             $table->timestamps();
         });
     }

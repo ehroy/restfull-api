@@ -18,7 +18,7 @@ class UserAuthController extends Controller
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'username' => ['required'],
+            'name' => ['required'],
             'email' => ['required','email'],
             'password' => ['required'],
         ]);
@@ -28,12 +28,12 @@ class UserAuthController extends Controller
             ['errors'=>$validator->errors()],400
         );
         }
-        if(User::where("username",$request['username'])->count() == 1)
+        if(User::where("name",$request['name'])->count() == 1)
         {
             return response()->json([
                 "errors" => [
                     'message' => [
-                        'username already register.'
+                        'name already register.'
                     ]
                 ]
                     ],400);
@@ -49,7 +49,7 @@ class UserAuthController extends Controller
                     ],400);
         }
         $user = new User();
-        $user->username = $request->username;
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->roles_id = Role::where("name",'customer')->first()->id;
@@ -58,7 +58,7 @@ class UserAuthController extends Controller
 
         return response()->json([
             "data" => [
-                "username" => $request->username,
+                "name" => $request->name,
                 "email" => $request->email,
             ],
                 'message' => 'Create Successfully'
@@ -113,7 +113,7 @@ class UserAuthController extends Controller
                 return response([
                         "data" => [
                             "id" => $user->id,
-                            "username" => $user->username,
+                            "name" => $user->name,
                             "email" => $request->email,
                             "token" => $user->createToken('user')->plainTextToken,
                         ],
