@@ -11,10 +11,6 @@ createInertiaApp({
             import.meta.glob("./Pages/**/*.jsx")
         ),
     setup({ el, App, props }) {
-        createRoot(el).render(
-            <ChakraProvider>
-                <App {...props} />
-            </ChakraProvider>
-        );
+        createRoot(el).render(<App {...props} />);
     },
 });
