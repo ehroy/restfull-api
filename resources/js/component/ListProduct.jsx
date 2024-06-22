@@ -1,19 +1,50 @@
 import React from "react";
+import Products from "../atribute/logo.png";
 const Product = [
-    "https://placehold.co/600x600?text=1",
-    "https://placehold.co/600x600?text=2",
-    "https://placehold.co/600x600?text=3",
-    "https://placehold.co/600x600?text=4",
-    "https://placehold.co/600x600?text=5",
-    "https://placehold.co/600x600?text=6",
+    { image: Products, name: "Kursi minimalis", price: "Rp. 20.000.000" },
+    { image: Products, name: "Kursi minimalis", price: "Rp. 20.000.000" },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
+    {
+        image: "https://placehold.co/400x600?text=3",
+        name: "Kursi minimalis",
+        price: "Rp. 20.000.000",
+    },
 ];
 export default function ListProduct({ children }) {
     return (
         <>
             <div className="m-5 flex flex-col gap-24">
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-4 gap-4">
                     {Product.map((images, index) => (
-                        <img src={images} alt={index} />
+                        <img
+                            className="hover:will-change-transform"
+                            src={images.image}
+                            alt={index}
+                        ></img>
                     ))}
                 </div>
             </div>

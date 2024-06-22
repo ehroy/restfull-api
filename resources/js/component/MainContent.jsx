@@ -1,10 +1,13 @@
 import React from "react";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
+import Slider from "../atribute/pageslider1.jpg";
+import Slider1 from "../atribute/pageslider2.jpg";
+import Slider2 from "../atribute/pageslider3.jpg";
 
 const Images = [
-    "https://placehold.co/1200x600?text=Product1",
-    "https://placehold.co/1200x600?text=Product2",
-    "https://placehold.co/1200x600?text=Product3",
+    Slider,
+    Slider1,
+    Slider2,
 
     // Add more image URLs here
 ];
@@ -18,7 +21,7 @@ export default function MainContent() {
                         <img
                             src={image}
                             alt={index}
-                            className="h-full w-full"
+                            className="md:h-screen sm:h-full w-full"
                         />
                     </div>
                 ))}
