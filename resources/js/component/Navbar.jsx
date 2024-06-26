@@ -3,7 +3,7 @@ import Logo from "../atribute/logo.png";
 export default function Headers() {
     return (
         <nav className="py-2 px-4 bg-gray-100">
-            <div className="container mx-auto flex items-center ">
+            <div className=" mx-auto flex items-center ">
                 <img
                     src={Logo}
                     className="rounded-full size-12 items-start cursor-pointer "
@@ -68,29 +68,5 @@ export default function Headers() {
                 </div>
             </div>
         </nav>
-        // {/* <nav>
-        //     <div className="text-2xl cursor-pointer m-2">
-        //         <span className="flex items-center font-semibold text-xl">
-        //             <img
-        //                 src={Logo}
-        //                 className="rounded-full size-12 items-start p-1"
-        //             />
-        //             Decoration Jepara
-        //         </span>
-        //     </div>
-        //     <div className="justify-center font-semibold text-xl list-none m-2 font-serif ">
-        //         <ul className="flex bg-black">
-        //             <li className="px-8 mt-2">
-        //                 <a href="">Dashboard</a>
-        //             </li>
-        //             <li className="px-8  mt-2">
-        //                 <a href="">product</a>
-        //             </li>
-        //             <li className="px-8  mt-2">
-        //                 <a href="">Get Started</a>
-        //             </li>
-        //         </ul>
-        //     </div>
-        // </nav> */}
     );
 }
